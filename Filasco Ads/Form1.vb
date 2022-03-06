@@ -2,6 +2,8 @@
 Imports System.Net
 Imports MySql.Data.MySqlClient
 Public Class Form1
+    Dim index As Integer = 0
+    Dim timeCount As Integer = -1
 #Region "declare"
     Dim mycmd As New MySqlCommand
     Dim myconnection As New DTConnection
@@ -87,47 +89,50 @@ Public Class Form1
         PerformZoom(InitialZoom)
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSetData.Click
-        Try
-            Dim globalElement As HtmlElementCollection = Nothing
-            globalElement = globalVOIP.Document.GetElementsByTagName("input")
-            For Each curElement As HtmlElement In globalElement
-                If InStr(curElement.GetAttribute("classname").ToString, "input js-titleInput  input--title") Then
-                    curElement.SetAttribute("value", txtSubject.Text)
-                    Exit For
-                End If
-            Next
-            globalVOIP.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
+        'Try
+        On Error Resume Next
+        Dim globalElement As HtmlElementCollection = Nothing
+        globalElement = globalVOIP.Document.GetElementsByTagName("input")
+        For Each curElement As HtmlElement In globalElement
+            If InStr(curElement.GetAttribute("classname").ToString, "input js-titleInput  input--title") Then
+                curElement.SetAttribute("value", txtSubject.Text)
+                Exit For
+            End If
+        Next
+        globalVOIP.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
+        On Error Resume Next
+        calltermination.Document.GetElementById("subject").SetAttribute("value", txtSubject.Text)
+        On Error Resume Next
+        calltermination.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
+        On Error Resume Next
+        forumVoip.Document.GetElementById("subject").SetAttribute("value", txtSubject.Text)
+        On Error Resume Next
+        forumVoip.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
 
-            calltermination.Document.GetElementById("subject").SetAttribute("value", txtSubject.Text)
-            calltermination.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
+        voiphelp.Document.GetElementById("subject").SetAttribute("value", txtSubject.Text)
+        voiphelp.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
 
-            forumVoip.Document.GetElementById("subject").SetAttribute("value", txtSubject.Text)
-            forumVoip.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
+        Dim inputTagCollection3 = bestVoip.Document.GetElementsByTagName("input")
+        For Each inputTag As HtmlElement In inputTagCollection3
+            If inputTag.OuterHtml.Contains("subject") Then
+                inputTag.SetAttribute("value", txtSubject.Text)
+            End If
+        Next
+        bestVoip.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
 
-            voiphelp.Document.GetElementById("subject").SetAttribute("value", txtSubject.Text)
-            voiphelp.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
-
-            Dim inputTagCollection3 = bestVoip.Document.GetElementsByTagName("input")
-            For Each inputTag As HtmlElement In inputTagCollection3
-                If inputTag.OuterHtml.Contains("subject") Then
-                    inputTag.SetAttribute("value", txtSubject.Text)
-                End If
-            Next
-            bestVoip.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
-
-            voiptraffic.Document.GetElementById("subject").SetAttribute("value", txtSubject.Text)
-            Dim inputTagCollection_voiptraffic = voiptraffic.Document.GetElementsByTagName("textarea")
-            Dim inputTagg As HtmlElement = inputTagCollection_voiptraffic(0)
-            inputTagg.SetAttribute("value", txtBody.Text)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
+        voiptraffic.Document.GetElementById("subject").SetAttribute("value", txtSubject.Text)
+        Dim inputTagCollection_voiptraffic = voiptraffic.Document.GetElementsByTagName("textarea")
+        Dim inputTagg As HtmlElement = inputTagCollection_voiptraffic(0)
+        inputTagg.SetAttribute("value", txtBody.Text)
+        'Catch ex As Exception
+        'MsgBox(ex.ToString)
+        'End Try
     End Sub
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles goBack.Click
-        'voiptraffic.GoBack()
+        start.Text = start.Text + 1
     End Sub
-    Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles goForward.Click
-        'voiptraffic.GoForward()
+    Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles times.Click
+        lvlTimes.Text = lvlTimes.Text + 1
     End Sub
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles btnReload.Click
         On Error Resume Next
@@ -141,6 +146,7 @@ Public Class Form1
 
     End Sub
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        'Label1.Text = 0
         Timer1.Start()
     End Sub
 
@@ -148,18 +154,21 @@ Public Class Form1
         Label1.Text = Val(Label1.Text) + 1
 
         'For index As Integer = 0 To ComboBoxSubject.Items.Count - 1
-        Dim index As Integer = 0
-        If Label1.Text = 5 Then
-            ComboBoxSubject.SelectedIndex = index
-        End If
-        Dim is100 As Integer = Label1.Text Mod 100
-        If is100 = 0 Then
+
+        ' If Label1.Text = 5 Then
+        'ComboBoxSubject.SelectedIndex = Index
+        'End If
+        ComboBoxSubject.SelectedIndex = index
+        Dim is0 As Integer = Label1.Text Mod 100
+        If is0 = 0 Then
             index = index + 1
-            ComboBoxSubject.SelectedIndex = index
         End If
         If Label1.Text = (ComboBoxSubject.Items.Count * 100) Then
             Label1.Text = 1
+            index = 0
         End If
+
+
         'Next
 
         'If Label1.Text = 5 Then
@@ -181,14 +190,17 @@ Public Class Form1
         ProgressBar1.Value += 1
         If ProgressBar1.Value = 5 Then
             Timer1.Interval = 1000
+            'Timer1.Interval = 100
             btnFit.PerformClick()
             btnReload.PerformClick()
         ElseIf ProgressBar1.Value = 18 Then
             btnSetData.PerformClick()
         ElseIf ProgressBar1.Value = 20 Then
-            'Timer1.Dispose()
+            'Timer1.Dispose() no need
+
             btnPost.PerformClick()
             Timer1.Interval = 10000
+            'Timer1.Interval = 100
         ElseIf ProgressBar1.Value = 100 Then
             ProgressBar1.Value = 1
         End If
@@ -532,7 +544,59 @@ Corporate Office: 47th street, Suite B3, Brooklyn, NY 11220"
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        'Label1.Text = 0
+        timeCount = -1
+        Timer2.Start()
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs)
 
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        start.Text = 0
+        lvlTimes.Text = 0
+
+    End Sub
+
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        Dim is0 As Integer = Label1.Text Mod 100
+        If is0 = 0 Then
+            timeCount = timeCount + 1
+        End If
+        If timeCount = lvlTimes.Text Then
+            Timer2.Dispose()
+        End If
+
+        index = start.Text
+        Label1.Text = Val(Label1.Text) + 1
+        ComboBoxSubject.SelectedIndex = index
+        'Dim is0 As Integer = Label1.Text Mod 100
+        'If is0 = 0 Then
+        '   index = index + 1
+        'End If
+        ' If Label1.Text = ((start.Text + 1) * 100) Then
+        'Label1.Text = 1
+        'index = start.Text
+        'End If
+
+        ProgressBar1.Value += 1
+        If ProgressBar1.Value = 5 Then
+            Timer2.Interval = 1000
+            'Timer2.Interval = 100
+            btnFit.PerformClick()
+            btnReload.PerformClick()
+        ElseIf ProgressBar1.Value = 18 Then
+            btnSetData.PerformClick()
+        ElseIf ProgressBar1.Value = 20 Then
+            'Timer1.Dispose() no need
+
+            btnPost.PerformClick()
+            Timer2.Interval = 10000
+            'Timer2.Interval = 100
+        ElseIf ProgressBar1.Value = 100 Then
+            ProgressBar1.Value = 1
+        End If
+    End Sub
 End Class

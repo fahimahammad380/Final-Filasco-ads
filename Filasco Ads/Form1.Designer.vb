@@ -48,7 +48,7 @@ Partial Class Form1
         Me.LabelUser2 = New System.Windows.Forms.Label()
         Me.forumVoip = New System.Windows.Forms.WebBrowser()
         Me.voiptraffic = New System.Windows.Forms.WebBrowser()
-        Me.goForward = New System.Windows.Forms.Button()
+        Me.times = New System.Windows.Forms.Button()
         Me.lblForumVoipPass = New System.Windows.Forms.Label()
         Me.lblForumVoipUser = New System.Windows.Forms.Label()
         Me.lblVoipHelpPass = New System.Windows.Forms.Label()
@@ -67,6 +67,9 @@ Partial Class Form1
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.voipForum = New System.Windows.Forms.WebBrowser()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.start = New System.Windows.Forms.Label()
+        Me.lvlTimes = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'globalVOIP
@@ -153,11 +156,11 @@ Partial Class Form1
         '
         'goBack
         '
-        Me.goBack.Location = New System.Drawing.Point(1085, 37)
+        Me.goBack.Location = New System.Drawing.Point(1129, 107)
         Me.goBack.Name = "goBack"
         Me.goBack.Size = New System.Drawing.Size(85, 30)
         Me.goBack.TabIndex = 9
-        Me.goBack.Text = "<<"
+        Me.goBack.Text = "+1"
         Me.goBack.UseVisualStyleBackColor = True
         '
         'btnReload
@@ -185,7 +188,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(915, 40)
+        Me.Label1.Location = New System.Drawing.Point(924, 42)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(16, 17)
         Me.Label1.TabIndex = 12
@@ -235,7 +238,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(32, 249)
+        Me.Label2.Location = New System.Drawing.Point(35, 249)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(103, 17)
         Me.Label2.TabIndex = 19
@@ -244,7 +247,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(140, 249)
+        Me.Label3.Location = New System.Drawing.Point(160, 249)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(130, 17)
         Me.Label3.TabIndex = 19
@@ -253,7 +256,7 @@ Partial Class Form1
         'LabelPass2
         '
         Me.LabelPass2.AutoSize = True
-        Me.LabelPass2.Location = New System.Drawing.Point(936, 249)
+        Me.LabelPass2.Location = New System.Drawing.Point(966, 247)
         Me.LabelPass2.Name = "LabelPass2"
         Me.LabelPass2.Size = New System.Drawing.Size(88, 17)
         Me.LabelPass2.TabIndex = 20
@@ -262,7 +265,7 @@ Partial Class Form1
         'LabelUser2
         '
         Me.LabelUser2.AutoSize = True
-        Me.LabelUser2.Location = New System.Drawing.Point(811, 249)
+        Me.LabelUser2.Location = New System.Drawing.Point(810, 247)
         Me.LabelUser2.Name = "LabelUser2"
         Me.LabelUser2.Size = New System.Drawing.Size(103, 17)
         Me.LabelUser2.TabIndex = 21
@@ -287,19 +290,19 @@ Partial Class Form1
         Me.voiptraffic.TabIndex = 23
         Me.voiptraffic.Url = New System.Uri("", System.UriKind.Relative)
         '
-        'goForward
+        'times
         '
-        Me.goForward.Location = New System.Drawing.Point(1176, 37)
-        Me.goForward.Name = "goForward"
-        Me.goForward.Size = New System.Drawing.Size(85, 30)
-        Me.goForward.TabIndex = 24
-        Me.goForward.Text = ">>"
-        Me.goForward.UseVisualStyleBackColor = True
+        Me.times.Location = New System.Drawing.Point(1337, 107)
+        Me.times.Name = "times"
+        Me.times.Size = New System.Drawing.Size(85, 30)
+        Me.times.TabIndex = 24
+        Me.times.Text = "Times"
+        Me.times.UseVisualStyleBackColor = True
         '
         'lblForumVoipPass
         '
         Me.lblForumVoipPass.AutoSize = True
-        Me.lblForumVoipPass.Location = New System.Drawing.Point(1724, 239)
+        Me.lblForumVoipPass.Location = New System.Drawing.Point(1748, 247)
         Me.lblForumVoipPass.Name = "lblForumVoipPass"
         Me.lblForumVoipPass.Size = New System.Drawing.Size(88, 17)
         Me.lblForumVoipPass.TabIndex = 26
@@ -308,7 +311,7 @@ Partial Class Form1
         'lblForumVoipUser
         '
         Me.lblForumVoipUser.AutoSize = True
-        Me.lblForumVoipUser.Location = New System.Drawing.Point(1616, 239)
+        Me.lblForumVoipUser.Location = New System.Drawing.Point(1612, 247)
         Me.lblForumVoipUser.Name = "lblForumVoipUser"
         Me.lblForumVoipUser.Size = New System.Drawing.Size(103, 17)
         Me.lblForumVoipUser.TabIndex = 27
@@ -317,7 +320,7 @@ Partial Class Form1
         'lblVoipHelpPass
         '
         Me.lblVoipHelpPass.AutoSize = True
-        Me.lblVoipHelpPass.Location = New System.Drawing.Point(140, 625)
+        Me.lblVoipHelpPass.Location = New System.Drawing.Point(175, 623)
         Me.lblVoipHelpPass.Name = "lblVoipHelpPass"
         Me.lblVoipHelpPass.Size = New System.Drawing.Size(115, 17)
         Me.lblVoipHelpPass.TabIndex = 28
@@ -326,7 +329,7 @@ Partial Class Form1
         'lblVoipHelpUser
         '
         Me.lblVoipHelpUser.AutoSize = True
-        Me.lblVoipHelpUser.Location = New System.Drawing.Point(20, 625)
+        Me.lblVoipHelpUser.Location = New System.Drawing.Point(25, 623)
         Me.lblVoipHelpUser.Name = "lblVoipHelpUser"
         Me.lblVoipHelpUser.Size = New System.Drawing.Size(103, 17)
         Me.lblVoipHelpUser.TabIndex = 29
@@ -335,7 +338,7 @@ Partial Class Form1
         'lblBestVoipPass
         '
         Me.lblBestVoipPass.AutoSize = True
-        Me.lblBestVoipPass.Location = New System.Drawing.Point(945, 625)
+        Me.lblBestVoipPass.Location = New System.Drawing.Point(977, 623)
         Me.lblBestVoipPass.Name = "lblBestVoipPass"
         Me.lblBestVoipPass.Size = New System.Drawing.Size(122, 17)
         Me.lblBestVoipPass.TabIndex = 30
@@ -344,7 +347,7 @@ Partial Class Form1
         'lblBestVoipUser
         '
         Me.lblBestVoipUser.AutoSize = True
-        Me.lblBestVoipUser.Location = New System.Drawing.Point(811, 625)
+        Me.lblBestVoipUser.Location = New System.Drawing.Point(810, 623)
         Me.lblBestVoipUser.Name = "lblBestVoipUser"
         Me.lblBestVoipUser.Size = New System.Drawing.Size(103, 17)
         Me.lblBestVoipUser.TabIndex = 31
@@ -353,7 +356,7 @@ Partial Class Form1
         'lblVoipTrafficPass
         '
         Me.lblVoipTrafficPass.AutoSize = True
-        Me.lblVoipTrafficPass.Location = New System.Drawing.Point(1724, 625)
+        Me.lblVoipTrafficPass.Location = New System.Drawing.Point(1748, 623)
         Me.lblVoipTrafficPass.Name = "lblVoipTrafficPass"
         Me.lblVoipTrafficPass.Size = New System.Drawing.Size(122, 17)
         Me.lblVoipTrafficPass.TabIndex = 32
@@ -362,7 +365,7 @@ Partial Class Form1
         'lblVoipTrafficUser
         '
         Me.lblVoipTrafficUser.AutoSize = True
-        Me.lblVoipTrafficUser.Location = New System.Drawing.Point(1616, 625)
+        Me.lblVoipTrafficUser.Location = New System.Drawing.Point(1612, 623)
         Me.lblVoipTrafficUser.Name = "lblVoipTrafficUser"
         Me.lblVoipTrafficUser.Size = New System.Drawing.Size(103, 17)
         Me.lblVoipTrafficUser.TabIndex = 33
@@ -406,7 +409,7 @@ Partial Class Form1
         '
         'btnSwitch
         '
-        Me.btnSwitch.Location = New System.Drawing.Point(1631, 36)
+        Me.btnSwitch.Location = New System.Drawing.Point(1449, 108)
         Me.btnSwitch.Name = "btnSwitch"
         Me.btnSwitch.Size = New System.Drawing.Size(85, 30)
         Me.btnSwitch.TabIndex = 38
@@ -417,7 +420,7 @@ Partial Class Form1
         '
         Me.lvlSubjectLength.AutoSize = True
         Me.lvlSubjectLength.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lvlSubjectLength.Location = New System.Drawing.Point(832, 46)
+        Me.lvlSubjectLength.Location = New System.Drawing.Point(832, 45)
         Me.lvlSubjectLength.Name = "lvlSubjectLength"
         Me.lvlSubjectLength.Size = New System.Drawing.Size(24, 17)
         Me.lvlSubjectLength.TabIndex = 39
@@ -427,7 +430,7 @@ Partial Class Form1
         '
         Me.lvlBodyLength.AutoSize = True
         Me.lvlBodyLength.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lvlBodyLength.Location = New System.Drawing.Point(805, 87)
+        Me.lvlBodyLength.Location = New System.Drawing.Point(792, 86)
         Me.lvlBodyLength.Name = "lvlBodyLength"
         Me.lvlBodyLength.Size = New System.Drawing.Size(32, 17)
         Me.lvlBodyLength.TabIndex = 40
@@ -447,12 +450,39 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(1214, 178)
+        Me.Button1.Location = New System.Drawing.Point(1129, 143)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(293, 28)
         Me.Button1.TabIndex = 42
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "Start"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'start
+        '
+        Me.start.AutoSize = True
+        Me.start.Location = New System.Drawing.Point(1220, 114)
+        Me.start.Name = "start"
+        Me.start.Size = New System.Drawing.Size(16, 17)
+        Me.start.TabIndex = 43
+        Me.start.Text = "0"
+        '
+        'lvlTimes
+        '
+        Me.lvlTimes.AutoSize = True
+        Me.lvlTimes.Location = New System.Drawing.Point(1315, 113)
+        Me.lvlTimes.Name = "lvlTimes"
+        Me.lvlTimes.Size = New System.Drawing.Size(16, 17)
+        Me.lvlTimes.TabIndex = 44
+        Me.lvlTimes.Text = "0"
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(1246, 106)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(60, 31)
+        Me.Button2.TabIndex = 45
+        Me.Button2.Text = "Reset"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -461,6 +491,9 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ControlDark
         Me.ClientSize = New System.Drawing.Size(3040, 1325)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.lvlTimes)
+        Me.Controls.Add(Me.start)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.voipForum)
         Me.Controls.Add(Me.lvlBodyLength)
@@ -478,7 +511,7 @@ Partial Class Form1
         Me.Controls.Add(Me.lblVoipHelpUser)
         Me.Controls.Add(Me.lblForumVoipPass)
         Me.Controls.Add(Me.lblForumVoipUser)
-        Me.Controls.Add(Me.goForward)
+        Me.Controls.Add(Me.times)
         Me.Controls.Add(Me.voiptraffic)
         Me.Controls.Add(Me.forumVoip)
         Me.Controls.Add(Me.LabelPass2)
@@ -533,7 +566,7 @@ Partial Class Form1
     Friend WithEvents LabelUser2 As Label
     Friend WithEvents forumVoip As WebBrowser
     Friend WithEvents voiptraffic As WebBrowser
-    Friend WithEvents goForward As Button
+    Friend WithEvents times As Button
     Friend WithEvents lblForumVoipPass As Label
     Friend WithEvents lblForumVoipUser As Label
     Friend WithEvents lblVoipHelpPass As Label
@@ -552,4 +585,7 @@ Partial Class Form1
     Friend WithEvents Timer3 As Timer
     Friend WithEvents voipForum As WebBrowser
     Friend WithEvents Button1 As Button
+    Friend WithEvents start As Label
+    Friend WithEvents lvlTimes As Label
+    Friend WithEvents Button2 As Button
 End Class
