@@ -70,6 +70,9 @@ Partial Class Form1
         Me.start = New System.Windows.Forms.Label()
         Me.lvlTimes = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.cmbInterval = New System.Windows.Forms.ComboBox()
+        Me.lvlcounter = New System.Windows.Forms.Label()
+        Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'globalVOIP
@@ -188,7 +191,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(924, 42)
+        Me.Label1.Location = New System.Drawing.Point(918, 40)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(16, 17)
         Me.Label1.TabIndex = 12
@@ -238,7 +241,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(35, 249)
+        Me.Label2.Location = New System.Drawing.Point(20, 245)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(103, 17)
         Me.Label2.TabIndex = 19
@@ -247,7 +250,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(160, 249)
+        Me.Label3.Location = New System.Drawing.Point(215, 245)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(130, 17)
         Me.Label3.TabIndex = 19
@@ -256,7 +259,7 @@ Partial Class Form1
         'LabelPass2
         '
         Me.LabelPass2.AutoSize = True
-        Me.LabelPass2.Location = New System.Drawing.Point(966, 247)
+        Me.LabelPass2.Location = New System.Drawing.Point(1060, 243)
         Me.LabelPass2.Name = "LabelPass2"
         Me.LabelPass2.Size = New System.Drawing.Size(88, 17)
         Me.LabelPass2.TabIndex = 20
@@ -265,7 +268,7 @@ Partial Class Form1
         'LabelUser2
         '
         Me.LabelUser2.AutoSize = True
-        Me.LabelUser2.Location = New System.Drawing.Point(810, 247)
+        Me.LabelUser2.Location = New System.Drawing.Point(816, 243)
         Me.LabelUser2.Name = "LabelUser2"
         Me.LabelUser2.Size = New System.Drawing.Size(103, 17)
         Me.LabelUser2.TabIndex = 21
@@ -302,7 +305,7 @@ Partial Class Form1
         'lblForumVoipPass
         '
         Me.lblForumVoipPass.AutoSize = True
-        Me.lblForumVoipPass.Location = New System.Drawing.Point(1748, 247)
+        Me.lblForumVoipPass.Location = New System.Drawing.Point(1819, 247)
         Me.lblForumVoipPass.Name = "lblForumVoipPass"
         Me.lblForumVoipPass.Size = New System.Drawing.Size(88, 17)
         Me.lblForumVoipPass.TabIndex = 26
@@ -311,7 +314,7 @@ Partial Class Form1
         'lblForumVoipUser
         '
         Me.lblForumVoipUser.AutoSize = True
-        Me.lblForumVoipUser.Location = New System.Drawing.Point(1612, 247)
+        Me.lblForumVoipUser.Location = New System.Drawing.Point(1607, 247)
         Me.lblForumVoipUser.Name = "lblForumVoipUser"
         Me.lblForumVoipUser.Size = New System.Drawing.Size(103, 17)
         Me.lblForumVoipUser.TabIndex = 27
@@ -320,7 +323,7 @@ Partial Class Form1
         'lblVoipHelpPass
         '
         Me.lblVoipHelpPass.AutoSize = True
-        Me.lblVoipHelpPass.Location = New System.Drawing.Point(175, 623)
+        Me.lblVoipHelpPass.Location = New System.Drawing.Point(255, 623)
         Me.lblVoipHelpPass.Name = "lblVoipHelpPass"
         Me.lblVoipHelpPass.Size = New System.Drawing.Size(115, 17)
         Me.lblVoipHelpPass.TabIndex = 28
@@ -329,7 +332,7 @@ Partial Class Form1
         'lblVoipHelpUser
         '
         Me.lblVoipHelpUser.AutoSize = True
-        Me.lblVoipHelpUser.Location = New System.Drawing.Point(25, 623)
+        Me.lblVoipHelpUser.Location = New System.Drawing.Point(20, 623)
         Me.lblVoipHelpUser.Name = "lblVoipHelpUser"
         Me.lblVoipHelpUser.Size = New System.Drawing.Size(103, 17)
         Me.lblVoipHelpUser.TabIndex = 29
@@ -338,7 +341,7 @@ Partial Class Form1
         'lblBestVoipPass
         '
         Me.lblBestVoipPass.AutoSize = True
-        Me.lblBestVoipPass.Location = New System.Drawing.Point(977, 623)
+        Me.lblBestVoipPass.Location = New System.Drawing.Point(1068, 623)
         Me.lblBestVoipPass.Name = "lblBestVoipPass"
         Me.lblBestVoipPass.Size = New System.Drawing.Size(122, 17)
         Me.lblBestVoipPass.TabIndex = 30
@@ -347,7 +350,7 @@ Partial Class Form1
         'lblBestVoipUser
         '
         Me.lblBestVoipUser.AutoSize = True
-        Me.lblBestVoipUser.Location = New System.Drawing.Point(810, 623)
+        Me.lblBestVoipUser.Location = New System.Drawing.Point(808, 623)
         Me.lblBestVoipUser.Name = "lblBestVoipUser"
         Me.lblBestVoipUser.Size = New System.Drawing.Size(103, 17)
         Me.lblBestVoipUser.TabIndex = 31
@@ -356,7 +359,7 @@ Partial Class Form1
         'lblVoipTrafficPass
         '
         Me.lblVoipTrafficPass.AutoSize = True
-        Me.lblVoipTrafficPass.Location = New System.Drawing.Point(1748, 623)
+        Me.lblVoipTrafficPass.Location = New System.Drawing.Point(1819, 623)
         Me.lblVoipTrafficPass.Name = "lblVoipTrafficPass"
         Me.lblVoipTrafficPass.Size = New System.Drawing.Size(122, 17)
         Me.lblVoipTrafficPass.TabIndex = 32
@@ -365,7 +368,7 @@ Partial Class Form1
         'lblVoipTrafficUser
         '
         Me.lblVoipTrafficUser.AutoSize = True
-        Me.lblVoipTrafficUser.Location = New System.Drawing.Point(1612, 623)
+        Me.lblVoipTrafficUser.Location = New System.Drawing.Point(1607, 623)
         Me.lblVoipTrafficUser.Name = "lblVoipTrafficUser"
         Me.lblVoipTrafficUser.Size = New System.Drawing.Size(103, 17)
         Me.lblVoipTrafficUser.TabIndex = 33
@@ -420,7 +423,7 @@ Partial Class Form1
         '
         Me.lvlSubjectLength.AutoSize = True
         Me.lvlSubjectLength.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lvlSubjectLength.Location = New System.Drawing.Point(832, 45)
+        Me.lvlSubjectLength.Location = New System.Drawing.Point(816, 47)
         Me.lvlSubjectLength.Name = "lvlSubjectLength"
         Me.lvlSubjectLength.Size = New System.Drawing.Size(24, 17)
         Me.lvlSubjectLength.TabIndex = 39
@@ -430,7 +433,7 @@ Partial Class Form1
         '
         Me.lvlBodyLength.AutoSize = True
         Me.lvlBodyLength.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lvlBodyLength.Location = New System.Drawing.Point(792, 86)
+        Me.lvlBodyLength.Location = New System.Drawing.Point(808, 86)
         Me.lvlBodyLength.Name = "lvlBodyLength"
         Me.lvlBodyLength.Size = New System.Drawing.Size(32, 17)
         Me.lvlBodyLength.TabIndex = 40
@@ -460,7 +463,7 @@ Partial Class Form1
         'start
         '
         Me.start.AutoSize = True
-        Me.start.Location = New System.Drawing.Point(1220, 114)
+        Me.start.Location = New System.Drawing.Point(1223, 114)
         Me.start.Name = "start"
         Me.start.Size = New System.Drawing.Size(16, 17)
         Me.start.TabIndex = 43
@@ -469,7 +472,7 @@ Partial Class Form1
         'lvlTimes
         '
         Me.lvlTimes.AutoSize = True
-        Me.lvlTimes.Location = New System.Drawing.Point(1315, 113)
+        Me.lvlTimes.Location = New System.Drawing.Point(1313, 112)
         Me.lvlTimes.Name = "lvlTimes"
         Me.lvlTimes.Size = New System.Drawing.Size(16, 17)
         Me.lvlTimes.TabIndex = 44
@@ -484,6 +487,27 @@ Partial Class Form1
         Me.Button2.Text = "Reset"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'cmbInterval
+        '
+        Me.cmbInterval.FormattingEnabled = True
+        Me.cmbInterval.Items.AddRange(New Object() {"Default Interval", "20 Minutes Interval", "25 Minutes Interval", "30 Minutes Interval"})
+        Me.cmbInterval.Location = New System.Drawing.Point(1097, 39)
+        Me.cmbInterval.Name = "cmbInterval"
+        Me.cmbInterval.Size = New System.Drawing.Size(154, 24)
+        Me.cmbInterval.TabIndex = 46
+        '
+        'lvlcounter
+        '
+        Me.lvlcounter.Location = New System.Drawing.Point(943, 40)
+        Me.lvlcounter.Name = "lvlcounter"
+        Me.lvlcounter.Size = New System.Drawing.Size(25, 15)
+        Me.lvlcounter.TabIndex = 0
+        Me.lvlcounter.Text = "0"
+        '
+        'Timer4
+        '
+        Me.Timer4.Interval = 1000
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -491,6 +515,8 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ControlDark
         Me.ClientSize = New System.Drawing.Size(3040, 1325)
+        Me.Controls.Add(Me.lvlcounter)
+        Me.Controls.Add(Me.cmbInterval)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.lvlTimes)
         Me.Controls.Add(Me.start)
@@ -588,4 +614,7 @@ Partial Class Form1
     Friend WithEvents start As Label
     Friend WithEvents lvlTimes As Label
     Friend WithEvents Button2 As Button
+    Friend WithEvents cmbInterval As ComboBox
+    Friend WithEvents lvlcounter As Label
+    Friend WithEvents Timer4 As Timer
 End Class

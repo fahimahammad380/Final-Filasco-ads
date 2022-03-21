@@ -34,7 +34,6 @@ G:\My Projects\VB project\New filasco ads\Filasco Ads 1\Filasco Ads\bin\Debug\Bo
 G:\My Projects\VB project\New filasco ads\Filasco Ads 1\Filasco Ads\bin\Debug\Renci.SshNet.dll
 G:\My Projects\VB project\New filasco ads\Filasco Ads 1\Filasco Ads\bin\Debug\MySql.Data.xml
 G:\My Projects\VB project\New filasco ads\Filasco Ads 1\Filasco Ads\obj\Debug\Filasco Ads.vbproj.AssemblyReference.cache
-G:\My Projects\VB project\New filasco ads\Filasco Ads 1\Filasco Ads\obj\Debug\Filasco Ads.vbproj.ResolveComReference.cache
 G:\My Projects\VB project\New filasco ads\Filasco Ads 1\Filasco Ads\obj\Debug\Filasco_Ads.Form1.resources
 G:\My Projects\VB project\New filasco ads\Filasco Ads 1\Filasco Ads\obj\Debug\Filasco_Ads.Form2.resources
 G:\My Projects\VB project\New filasco ads\Filasco Ads 1\Filasco Ads\obj\Debug\Filasco_Ads.Form3.resources

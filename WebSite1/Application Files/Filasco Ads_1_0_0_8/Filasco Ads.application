@@ -9,7 +9,7 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Filasco Ads.exe.manifest" size="6174">
+    <dependentAssembly dependencyType="install" codebase="Application Files\Filasco Ads_1_0_0_8\Filasco Ads.exe.manifest" size="6174">
       <assemblyIdentity name="Filasco Ads.exe" version="1.0.0.8" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>

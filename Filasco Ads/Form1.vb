@@ -152,6 +152,17 @@ Public Class Form1
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Label1.Text = Val(Label1.Text) + 1
+        Dim interval As Integer
+        If cmbInterval.Text = "Default Interval" Then
+            interval = 10000
+        ElseIf cmbInterval.Text = "20 Minutes Interval" Then
+            interval = 15000
+        ElseIf cmbInterval.Text = "25 Minutes Interval" Then
+            interval = 18750
+        ElseIf cmbInterval.Text = "30 Minutes Interval" Then
+            interval = 22500
+
+        End If
 
         'For index As Integer = 0 To ComboBoxSubject.Items.Count - 1
 
@@ -199,8 +210,11 @@ Public Class Form1
             'Timer1.Dispose() no need
 
             btnPost.PerformClick()
-            Timer1.Interval = 10000
-            'Timer1.Interval = 100
+
+            'default interval
+            'Timer1.Interval = 10000
+            Timer1.Interval = interval
+            Timer4.Enabled = True
         ElseIf ProgressBar1.Value = 100 Then
             ProgressBar1.Value = 1
         End If
@@ -379,6 +393,7 @@ Corporate Office: 47th street, Suite B3, Brooklyn, NY 11220"
         voiptraffic.Navigate("https://voiptraffic.forumotion.com/post?f=6&mode=newtopic")
         'voipForum.Navigate("https://voip.forumfree.it/?act=Post&CODE=00&f=11377564")
         reload()
+        cmbInterval.SelectedIndex = 0
         'MsgBox(ComboBoxSubject.Items.Count)
     End Sub
 
@@ -581,6 +596,18 @@ Corporate Office: 47th street, Suite B3, Brooklyn, NY 11220"
         'index = start.Text
         'End If
 
+        Dim interval As Integer
+        If cmbInterval.Text = "Default Interval" Then
+            interval = 10000
+        ElseIf cmbInterval.Text = "20 Minutes Interval" Then
+            interval = 15000
+        ElseIf cmbInterval.Text = "25 Minutes Interval" Then
+            interval = 18750
+        ElseIf cmbInterval.Text = "30 Minutes Interval" Then
+            interval = 22500
+
+        End If
+
         ProgressBar1.Value += 1
         If ProgressBar1.Value = 5 Then
             Timer2.Interval = 1000
@@ -593,10 +620,34 @@ Corporate Office: 47th street, Suite B3, Brooklyn, NY 11220"
             'Timer1.Dispose() no need
 
             btnPost.PerformClick()
-            Timer2.Interval = 10000
+            Timer2.Interval = interval
+            Timer4.Enabled = True
             'Timer2.Interval = 100
         ElseIf ProgressBar1.Value = 100 Then
             ProgressBar1.Value = 1
+        End If
+    End Sub
+
+    Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
+        lvlcounter.Text = lvlcounter.Text + 1
+        If cmbInterval.Text = "Default Interval" Then
+            If lvlcounter.Text = 10 Then
+                lvlcounter.Text = 0
+            End If
+
+        ElseIf cmbInterval.Text = "20 Minutes Interval" Then
+            If lvlcounter.Text = 15 Then
+                lvlcounter.Text = 0
+            End If
+        ElseIf cmbInterval.Text = "25 Minutes Interval" Then
+            If lvlcounter.Text = 19 Then
+                lvlcounter.Text = 0
+            End If
+        ElseIf cmbInterval.Text = "30 Minutes Interval" Then
+            If lvlcounter.Text = 23 Then
+                lvlcounter.Text = 0
+            End If
+
         End If
     End Sub
 End Class
