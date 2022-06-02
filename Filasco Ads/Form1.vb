@@ -105,9 +105,9 @@ Public Class Form1
         On Error Resume Next
         calltermination.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
         On Error Resume Next
-        forumVoip.Document.GetElementById("subject").SetAttribute("value", txtSubject.Text)
+        ' forumVoip.Document.GetElementById("subject").SetAttribute("value", txtSubject.Text)
         On Error Resume Next
-        forumVoip.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
+        'forumVoip.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
 
         voiphelp.Document.GetElementById("subject").SetAttribute("value", txtSubject.Text)
         voiphelp.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
