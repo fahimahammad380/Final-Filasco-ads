@@ -23,8 +23,12 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.wb = New System.Windows.Forms.WebBrowser()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.TextBoxWhere = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBoxUpdateTo = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Button1
@@ -36,28 +40,66 @@ Partial Class Form2
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'ComboBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(214, 12)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(329, 22)
-        Me.TextBox1.TabIndex = 2
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(418, 62)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(257, 24)
+        Me.ComboBox1.TabIndex = 4
         '
-        'wb
+        'btnUpdate
         '
-        Me.wb.Location = New System.Drawing.Point(177, 116)
-        Me.wb.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.wb.Name = "wb"
-        Me.wb.Size = New System.Drawing.Size(597, 322)
-        Me.wb.TabIndex = 3
+        Me.btnUpdate.Location = New System.Drawing.Point(98, 156)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(83, 34)
+        Me.btnUpdate.TabIndex = 5
+        Me.btnUpdate.Text = "update"
+        Me.btnUpdate.UseVisualStyleBackColor = True
+        '
+        'TextBoxWhere
+        '
+        Me.TextBoxWhere.Location = New System.Drawing.Point(265, 162)
+        Me.TextBoxWhere.Name = "TextBoxWhere"
+        Me.TextBoxWhere.Size = New System.Drawing.Size(169, 22)
+        Me.TextBoxWhere.TabIndex = 6
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(196, 165)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(50, 17)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Where"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(465, 165)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(85, 21)
+        Me.Label2.TabIndex = 9
+        Me.Label2.Text = "update to"
+        '
+        'TextBoxUpdateTo
+        '
+        Me.TextBoxUpdateTo.Location = New System.Drawing.Point(571, 164)
+        Me.TextBoxUpdateTo.Name = "TextBoxUpdateTo"
+        Me.TextBoxUpdateTo.Size = New System.Drawing.Size(169, 22)
+        Me.TextBoxUpdateTo.TabIndex = 8
         '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.wb)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TextBoxUpdateTo)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TextBoxWhere)
+        Me.Controls.Add(Me.btnUpdate)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Button1)
         Me.Name = "Form2"
         Me.Text = "Form2"
@@ -66,6 +108,10 @@ Partial Class Form2
 
     End Sub
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents wb As WebBrowser
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents btnUpdate As Button
+    Friend WithEvents TextBoxWhere As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TextBoxUpdateTo As TextBox
 End Class
