@@ -146,7 +146,7 @@ Partial Class Form1
         Me.calltermination.Name = "calltermination"
         Me.calltermination.Size = New System.Drawing.Size(769, 349)
         Me.calltermination.TabIndex = 7
-        Me.calltermination.Url = New System.Uri("http://www.calltermination.com/posting.php?mode=post&f=7", System.UriKind.Absolute)
+        Me.calltermination.Url = New System.Uri("", System.UriKind.Relative)
         '
         'Button5
         '

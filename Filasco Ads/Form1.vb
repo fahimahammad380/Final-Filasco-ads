@@ -101,9 +101,9 @@ Public Class Form1
         Next
         globalVOIP.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
         On Error Resume Next
-        calltermination.Document.GetElementById("subject").SetAttribute("value", txtSubject.Text)
+        ' calltermination.Document.GetElementById("subject").SetAttribute("value", txtSubject.Text)
         On Error Resume Next
-        calltermination.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
+        'calltermination.Document.GetElementById("message").SetAttribute("value", txtBody.Text)
         On Error Resume Next
         ' forumVoip.Document.GetElementById("subject").SetAttribute("value", txtSubject.Text)
         On Error Resume Next
@@ -138,7 +138,7 @@ Public Class Form1
         On Error Resume Next
         reload()
         globalVOIP.Navigate("https://globalvoipforum.com/forums/i-buy-voip-routes.4/post-thread")
-        calltermination.Navigate("http://www.calltermination.com/posting.php?mode=post&f=7")
+        'calltermination.Navigate("http://www.calltermination.com/posting.php?mode=post&f=7")
         voiphelp.Navigate("http://voiphelp24.com/posting.php?mode=post&f=5")
         bestVoip.Navigate("https://bestvoip.forumotion.com/post?f=1&mode=newtopic")
         forumVoip.Navigate("http://www.forumvoip.com/posting.php?mode=newtopic&f=4")
@@ -379,6 +379,9 @@ Corporate Office: 47th street, Suite B3, Brooklyn, NY 11220"
             ElseIf ComboBoxSubject.SelectedIndex = 4 Then
                 txtBody.Text = comments
                 txtSubject.Text = ComboBoxSubject.Text
+            ElseIf ComboBoxSubject.SelectedIndex = 5 Then
+                txtBody.Text = comments
+                txtSubject.Text = ComboBoxSubject.Text
             End If
         End While
         myconnection.close()
@@ -467,7 +470,7 @@ Corporate Office: 47th street, Suite B3, Brooklyn, NY 11220"
                 End If
             Next
 
-            calltermination.Document.GetElementById("post").InvokeMember("click")
+            'calltermination.Document.GetElementById("post").InvokeMember("click")
 
             Dim inputTagCollection = forumVoip.Document.GetElementsByTagName("input")
             For Each inputTag As HtmlElement In inputTagCollection
